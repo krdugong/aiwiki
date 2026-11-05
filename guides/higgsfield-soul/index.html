@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>힉스필드 소울 2.0 사용법 — 화보 이미지 생성, 소울 ID 얼굴 고정, 프롬프트 | AI위키</title>
+<meta name="description" content="힉스필드 소울(Soul 2.0) 사용법을 정리했습니다. 패션 화보급 이미지 생성 모델의 프리셋 20종과 해상도·크레딧, 소울 ID로 같은 얼굴을 고정하는 방법(사진 20~80장), 프롬프트 구조, 무드보드 활용, 소울 이미지를 시댄스·시네마 스튜디오 영상으로 잇는 흐름, 상업적 이용 주의.">
+<link rel="canonical" href="https://aiwiki.kr/guides/higgsfield-soul/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI위키">
+<meta property="og:title" content="힉스필드 소울 2.0 사용법 — 화보 이미지 생성, 소울 ID 얼굴 고정, 프롬프트">
+<meta property="og:description" content="힉스필드 소울(Soul 2.0) 사용법을 정리했습니다. 패션 화보급 이미지 생성 모델의 프리셋 20종과 해상도·크레딧, 소울 ID로 같은 얼굴을 고정하는 방법(사진 20~80장), 프롬프트 구조, 무드보드 활용, 소울 이미지를 시댄스·시네마 스튜디오 영상으로 잇는 흐름, 상업적 이용 주의.">
+<meta property="og:url" content="https://aiwiki.kr/guides/higgsfield-soul/">
+<meta property="og:image" content="https://aiwiki.kr/og/higgsfield-soul.png">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-10-30T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-30T09:00:00+09:00">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://aiwiki.kr/guides/higgsfield-soul/#article",
+   "headline": "힉스필드 소울 2.0 사용법 — 화보 이미지 생성, 소울 ID 얼굴 고정, 프롬프트",
+   "description": "힉스필드 소울(Soul 2.0) 사용법을 정리했습니다. 패션 화보급 이미지 생성 모델의 프리셋 20종과 해상도·크레딧, 소울 ID로 같은 얼굴을 고정하는 방법(사진 20~80장), 프롬프트 구조, 무드보드 활용, 소울 이미지를 시댄스·시네마 스튜디오 영상으로 잇는 흐름, 상업적 이용 주의.",
+   "inLanguage": "ko-KR",
+   "datePublished": "2026-10-30T09:00:00+09:00",
+   "dateModified": "2026-10-30T09:00:00+09:00",
+   "author": {
+    "@type": "Person",
+    "name": "AI위키 에디터",
+    "url": "https://aiwiki.kr/about/"
+   },
+   "publisher": {
+    "@id": "https://aiwiki.kr/#org"
+   },
+   "image": "https://aiwiki.kr/og/higgsfield-soul.png",
+   "mainEntityOfPage": "https://aiwiki.kr/guides/higgsfield-soul/",
+   "keywords": "힉스필드 소울, 힉스필드 소울 2.0 사용법, 힉스필드 소울 ID, 힉스필드 소울 프롬프트, 힉스필드 소울 시네마, 힉스필드 소울 캐릭터, 힉스필드 소울 무드보드, 힉스필드 이미지 생성, 힉스필드 캐릭터 만들기"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "홈",
+     "item": "https://aiwiki.kr/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "사용법",
+     "item": "https://aiwiki.kr/guides/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "힉스필드 소울 2.0 사용법 — AI 화보 이미지 생성, 소울 ID로 얼굴 고정, 프롬프트·무드보드, 영상으로 잇기",
+     "item": "https://aiwiki.kr/guides/higgsfield-soul/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "힉스필드 소울 2.0은 뭔가요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "힉스필드 자체 이미지 모델로 패션 화보·실사 인물에 특화됐습니다. 프리셋 20종 이상, 2K 해상도, 장당 약 0.12크레딧입니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "힉스필드 소울 ID는 어떻게 만드나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "본인 또는 동의받은 인물 사진 20~80장을 올려 학습합니다. 이후 소울 이미지와 시댄스 영상에서 같은 얼굴이 유지됩니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "소울 시네마는 뭔가요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "소울로 만든 이미지를 시네마 스튜디오나 시댄스 영상의 참조로 써서 화보 느낌 영상을 만드는 흐름을 가리킵니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "소울 프롬프트는 한글로 써도 되나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "입력은 되지만 영어가 안정적입니다. 프리셋을 먼저 고르면 프롬프트가 짧아도 됩니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "무료로 소울을 쓸 수 있나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "무료 플랜은 일부 이미지 모델 제한 사용과 캐릭터 생성 1회 수준입니다. 소울 대량 생성은 유료 플랜이 필요합니다."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- HEAD_EXTRAS:START -->
+<meta name="naver-site-verification" content="59a08c50500627f492a4c0506413f94299c81926">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-01FPZZN65L"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-01FPZZN65L");</script>
+<script src="//wcs.pstatic.net/wcslog.js"></script><script>if(!wcs_add)var wcs_add={};wcs_add["wa"]="1d5740855915c00";if(window.wcs){wcs_do();}</script>
+<!-- HEAD_EXTRAS:END -->
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/">AI위키</a>
+    <nav aria-label="주요 메뉴">
+      <ul>
+        <li><a href="/tools/">도구</a></li>
+        <li><a href="/compare/">비교</a></li>
+        <li><a href="/guides/">사용법</a></li>
+        <li><a href="/category/voice/">음성</a></li>
+        <li><a href="/category/video/">영상</a></li>
+        <li><a href="/category/image/">이미지</a></li>
+        <li><a href="/news/">뉴스</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap wide">
+  <nav class="breadcrumb" aria-label="경로">
+    <ol><li><a href="/">홈</a></li><li><a href="/guides/">사용법</a></li><li><a href="/tools/higgsfield/">힉스필드</a></li><li>힉스필드 소울 2.0 사용법 — AI 화보 이미지 생성, 소울 ID로 얼굴 고정, 프롬프트·무드보드, 영상으로 잇기</li></ol>
+  </nav>
+
+  <header class="article-head">
+    <p class="eyebrow">힉스필드 · 소울 2.0 · 소울 ID</p>
+    <h1>힉스필드 소울 2.0 사용법 — AI 화보 이미지 생성, 소울 ID로 얼굴 고정, 프롬프트·무드보드, 영상으로 잇기</h1>
+    <p class="sub">소울 2.0 이미지 생성, 프리셋·해상도·크레딧, 소울 ID 얼굴 고정, 프롬프트·무드보드, 영상으로 잇기.</p>
+    <div class="byline"><span>AI위키 에디터</span><span>2026.10.30 업데이트</span><span>읽는 시간 8분</span></div>
+  </header>
+
+  <div class="article-layout">
+  <article class="article-body">
+    <div class="summary">
+      <strong>30초 요약</strong>
+      <ul><li>소울 2.0은 힉스필드 자체 이미지 모델로, 패션 화보·실사 인물에 특화됐습니다. 2026년 초 공개, 프리셋 20종 이상, 1.5K·2K 해상도, 이미지 1장당 약 0.12크레딧(2026년 9월 기준)으로 매우 저렴합니다.</li><li>소울 ID는 사진 20~80장으로 &#x27;내 캐릭터&#x27;를 학습해 여러 이미지에서 같은 얼굴을 유지하는 기능입니다. 소울 모델과 시댄스 영상에 요소로 가져갈 수 있고, 외부로 내보낼 수는 없습니다.</li><li>소울 이미지를 참조로 시네마 스튜디오·시댄스에 넣으면 &#x27;소울 시네마&#x27; 식의 화보 영상이 됩니다. 쇼핑몰 모델컷·룩북·프로필에 가장 많이 쓰입니다.</li><li>무료 플랜은 캐릭터 생성 1회 수준이고, 소울 이미지 대량 생성은 Plus의 무제한 이미지 창과 궁합이 좋습니다.</li></ul>
+    </div>
+
+    <nav class="toc" aria-label="목차">
+      <strong>목차</strong>
+      <ol><li><a href="#what">소울 2.0이란</a></li><li><a href="#howto">소울 2.0 사용법 5단계</a></li><li><a href="#soul-id">소울 ID: 같은 얼굴 고정하기</a></li><li><a href="#prompt">소울 프롬프트 구조와 예시</a></li><li><a href="#cinema">소울 → 영상: 소울 시네마 흐름</a></li><li><a href="#legal">상업적 이용과 초상권</a></li><li><a href="#faq">자주 묻는 질문</a></li></ol>
+    </nav>
+
+    <h2 id="what">소울 2.0이란</h2><p>힉스필드가 직접 만든 이미지 생성 모델입니다. 미드저니처럼 예술적 범용성보다 &#x27;잡지 화보 같은 실사 인물·패션·제품&#x27;에 집중했습니다. 시대감성 프리셋(Y2K·필름·에디토리얼 등)이 있어 프롬프트를 길게 쓰지 않아도 톤이 잡힙니다.</p><div class="table-wrap"><table><thead><tr><th>항목</th><th>내용</th></tr></thead><tbody><tr><td><strong>공개</strong></td><td class="num">2026년 초 (2.0)</td></tr><tr><td><strong>프리셋</strong></td><td class="num">20종 이상 (화보·필름·스트리트·스튜디오 등)</td></tr><tr><td><strong>해상도</strong></td><td class="num">1.5K / 2K</td></tr><tr><td><strong>크레딧</strong></td><td>이미지 1장 약 0.12 (2026년 9월 기준)</td></tr><tr><td><strong>강점</strong></td><td>실사 인물·패션·제품 화보</td></tr><tr><td><strong>약점</strong></td><td>일러스트·판타지·텍스트 렌더링</td></tr></tbody></table></div><h2 id="howto">소울 2.0 사용법 5단계</h2><ol class="steps"><li><strong>이미지 메뉴 → Soul 2.0</strong><span>모델 목록에서 Soul 2.0 선택.</span></li><li><strong>프리셋</strong><span>에디토리얼·필름·스튜디오 등 톤을 먼저 고릅니다. 결과 차이가 가장 큽니다.</span></li><li><strong>프롬프트</strong><span>인물(성별·나이·분위기) + 의상 + 장소 + 조명 순으로 영어 한두 줄.</span></li><li><strong>참조·무드보드</strong><span>참고 사진을 올리면 구도·색감을 따릅니다. 여러 장을 무드보드로 묶어 톤 고정.</span></li><li><strong>생성·선택</strong><span>4장 생성 → 마음에 드는 것을 2K로 재생성 또는 영상 참조로 사용.</span></li></ol><h2 id="soul-id">소울 ID: 같은 얼굴 고정하기</h2><p>브랜드 모델이나 본인 캐릭터로 여러 컷을 만들려면 소울 ID가 필요합니다. 사진 20~80장을 올려 학습하면 이후 소울 이미지와 시댄스 영상에서 같은 얼굴이 유지됩니다.</p><ul><li><strong>사진 조건</strong>: 다양한 각도·표정·조명, 얼굴이 선명한 20장 이상. 같은 사진 반복은 효과 없음.</li><li><strong>권리</strong>: 본인 또는 명시적 동의를 받은 인물만. 타인 사진 업로드는 약관(5.3) 위반.</li><li><strong>한계</strong>: 외부로 내보내기 불가. 힉스필드 안에서만 사용.</li><li><strong>무료</strong>: 캐릭터 생성 1회 체험. 실사용은 유료 플랜.</li></ul><h2 id="prompt">소울 프롬프트 구조와 예시</h2><div class="table-wrap"><table><thead><tr><th>용도</th><th>프롬프트 (영어)</th><th>프리셋</th></tr></thead><tbody><tr><td><strong>쇼핑몰 모델컷</strong></td><td>a woman in a beige linen dress, studio, soft light, full body, catalog</td><td>스튜디오</td></tr><tr><td><strong>룩북</strong></td><td>a man in streetwear walking on a Seoul street, overcast, editorial</td><td>에디토리얼</td></tr><tr><td><strong>프로필</strong></td><td>close-up portrait, natural makeup, window light, calm</td><td>필름</td></tr><tr><td><strong>제품 화보</strong></td><td>a perfume bottle on wet stone, dramatic light, luxury</td><td>스튜디오</td></tr><tr><td><strong>감성 화보</strong></td><td>a woman by the sea at dusk, film grain, nostalgic</td><td>필름</td></tr></tbody></table></div><p style="margin-top:16px">텍스트(로고·글자)는 소울보다 나노바나나·GPT 이미지가 정확합니다. 글자가 필요하면 모델을 바꾸세요.</p><h2 id="cinema">소울 → 영상: 소울 시네마 흐름</h2><ol class="steps"><li><strong>소울로 키프레임</strong><span>원하는 컷을 소울 2.0으로 생성.</span></li><li><strong>영상 모델에 참조</strong><span>시네마 스튜디오(카메라·렌즈 선택) 또는 시댄스 2.5(소울 ID 요소 유지)에 참조로 입력.</span></li><li><strong>프리셋·프롬프트</strong><span>Dolly In·Orbit 등 프리셋 + 짧은 동작 프롬프트.</span></li><li><strong>컷 연결</strong><span>5~10초 컷 여러 개를 캡컷에서 이어 룩북 영상 완성.</span></li></ol><div class="cta-box"><h3>소울 2.0으로 화보 한 장부터 만들어 보세요</h3><p>Plus 이상의 무제한 이미지 창과 조합하면 화보를 크레딧 걱정 없이 뽑을 수 있습니다. 제휴 링크 로그인 시 3시간 최대 50% 할인.</p><a class="btn btn-primary" href="/go/higgsfield/" rel="sponsored noopener" target="_blank">힉스필드 할인가로 시작하기</a><p class="fine">제휴 링크입니다. 구매 시 AI위키에 수수료가 지급되며 가격은 동일합니다.<br>AI위키는 툴을 소개하는 정보 사이트이며 판매자·운영사가 아닙니다. 결제·환불·구독은 각 툴의 공식 채널에서 진행됩니다.</p></div><h2 id="legal">상업적 이용과 초상권</h2><ul><li><strong>생성 이미지</strong>: 유료 플랜은 상업적 이용 가능, 무료는 워터마크·비상업.</li><li><strong>실존 인물 닮음</strong>: 특정 유명인과 닮게 만드는 프롬프트는 거부되거나 약관 위반.</li><li><strong>모델컷 활용</strong>: 가상 인물 모델컷은 &#x27;실제 모델이 아님&#x27;을 표시하는 것이 표시광고법상 안전합니다.</li><li><strong>보상</strong>: IP 분쟁 보상은 엔터프라이즈만. 광고 집행 규모가 크면 법무 확인.</li></ul>
+
+    <h2 id="faq">자주 묻는 질문</h2>
+    <details><summary>힉스필드 소울 2.0은 뭔가요?</summary><p>힉스필드 자체 이미지 모델로 패션 화보·실사 인물에 특화됐습니다. 프리셋 20종 이상, 2K 해상도, 장당 약 0.12크레딧입니다.</p></details><details><summary>힉스필드 소울 ID는 어떻게 만드나요?</summary><p>본인 또는 동의받은 인물 사진 20~80장을 올려 학습합니다. 이후 소울 이미지와 시댄스 영상에서 같은 얼굴이 유지됩니다.</p></details><details><summary>소울 시네마는 뭔가요?</summary><p>소울로 만든 이미지를 시네마 스튜디오나 시댄스 영상의 참조로 써서 화보 느낌 영상을 만드는 흐름을 가리킵니다.</p></details><details><summary>소울 프롬프트는 한글로 써도 되나요?</summary><p>입력은 되지만 영어가 안정적입니다. 프리셋을 먼저 고르면 프롬프트가 짧아도 됩니다.</p></details><details><summary>무료로 소울을 쓸 수 있나요?</summary><p>무료 플랜은 일부 이미지 모델 제한 사용과 캐릭터 생성 1회 수준입니다. 소울 대량 생성은 유료 플랜이 필요합니다.</p></details>
+
+    <section class="related">
+      <h2>이어서 읽기</h2>
+      <div class="grid"><a class="card" href="/guides/ai-photoshoot/"><h3>AI 화보 생성 가이드</h3><p>모델컷·룩북·프로필</p></a><a class="card" href="/guides/higgsfield-features/"><h3>힉스필드 기능 총정리</h3><p>시네마 스튜디오·팝콘·스픽</p></a><a class="card" href="/guides/higgsfield-prompts/"><h3>힉스필드 프롬프트</h3><p>예시 20개</p></a></div>
+    </section>
+
+    <p class="disclosure">이 글은 AI위키 에디터가 직접 결제·테스트한 내용을 바탕으로 작성했습니다. 일부 링크는 제휴 링크이며 리뷰 내용에 영향을 주지 않습니다. 가격·기능은 2026년 10월 기준이며 변경될 수 있습니다.</p>
+  </article>
+  <aside class="article-side" aria-label="사이드바">
+    <div class="side-sticky">
+      <div class="side-card">
+        <div class="side-top"><span class="logo" style="background:#1d1d1f">H</span><div><strong><a href="/tools/higgsfield/">힉스필드</a></strong><span class="cat">영상 생성·멀티 모델 스위트</span></div></div>
+        <dl class="side-facts"><div><dt>평점</dt><dd><b>4.4</b>/5</dd></div><div><dt>무료 플랜</dt><dd>있음</dd></div><div><dt>시작 요금</dt><dd>무료 · 유료 월 $15~</dd></div></dl>
+        <span class="side-stamp">2026.10.30 요금 확인</span>
+        <a class="btn btn-primary side-cta" href="/go/higgsfield/" rel="sponsored noopener" target="_blank">힉스필드 할인가로 시작하기</a>
+        <p class="side-fine">제휴 링크 · 가격은 동일합니다</p>
+      </div>
+      <nav class="side-toc" aria-label="목차"><strong>목차</strong><ol><li><a href="#what">소울 2.0이란</a></li><li><a href="#howto">소울 2.0 사용법 5단계</a></li><li><a href="#soul-id">소울 ID: 같은 얼굴 고정하기</a></li><li><a href="#prompt">소울 프롬프트 구조와 예시</a></li><li><a href="#cinema">소울 → 영상: 소울 시네마 흐름</a></li><li><a href="#legal">상업적 이용과 초상권</a></li><li><a href="#faq">자주 묻는 질문</a></li></ol></nav>
+    </div>
+  </aside>
+  <div class="mobile-cta"><div><strong>힉스필드</strong><span>무료 · 유료 월 $15~</span></div><a class="btn btn-primary" href="/go/higgsfield/" rel="sponsored noopener" target="_blank">공식 사이트</a></div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="legal">
+      <span>© 2026 AI위키. 일부 링크는 제휴 링크이며, 구매 시 수수료를 받을 수 있습니다.</span>
+      <span><a href="/about/">소개</a> · <a href="/privacy/">개인정보처리방침</a> · <a href="/disclosure/">제휴 고지</a> · <a href="/en/" hreflang="en" lang="en">English</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var links=[].slice.call(document.querySelectorAll('.side-toc a[href^="#"]'));if(!links.length||!('IntersectionObserver' in window))return;
+var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+var heads=[].slice.call(document.querySelectorAll('.article-body h2[id]')).filter(function(h){return map[h.id];});
+function set(id){links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+id);});}
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)set(x.target.id);});},{rootMargin:'-64px 0px -70% 0px',threshold:0});
+heads.forEach(function(h){io.observe(h);});})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /search
+Disallow: /go/
+Disallow: /api/
+
+User-agent: Yeti
+Allow: /
+Disallow: /go/
+
+Sitemap: https://aiwiki.kr/sitemap.xml
