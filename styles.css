@@ -298,3 +298,9 @@ details p { margin: 12px 0 0; font-size: 16px; color: var(--muted); }
   html[lang="en"] .nav ul li:nth-child(2) { display: none; }
 }
 @media (max-width: 360px) { .nav ul li:nth-child(n+3) { display: none; } }
+
+/* 가이드 본문 캡처 */
+.shot { margin: 24px 0 28px; }
+.shot img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); }
+.shot.narrow img { max-width: 340px; }
+.shot figcaption { margin-top: 10px; font-size: 14px; line-height: 1.5; color: var(--muted); }
