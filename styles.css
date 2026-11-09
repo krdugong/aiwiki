@@ -304,3 +304,7 @@ details p { margin: 12px 0 0; font-size: 16px; color: var(--muted); }
 .shot img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); }
 .shot.narrow img { max-width: 340px; }
 .shot figcaption { margin-top: 10px; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.src-note { font-size: 14px; color: var(--muted); }
+.sources { font-size: 15px; }
+.sources li { margin: 6px 0; }
+.sources a { word-break: keep-all; }
