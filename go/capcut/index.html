@@ -3,7 +3,8 @@
 <meta name="robots" content="noindex,nofollow"><meta http-equiv="refresh" content="0;url=https://www.capcut.com/ko-kr/">
 <link rel="canonical" href="https://www.capcut.com/ko-kr/"><script>
 var t="https://www.capcut.com/ko-kr/";
-try{var r=new URL(document.referrer);if(/(^|\.)aiwiki\.kr$/.test(r.hostname)){var u=new URL(t);if(u.searchParams.has("fpr")){
-u.searchParams.set("fp_sid",(r.pathname.replace(/^\/|\/$/g,"").replace(/\//g,"-")||"home").slice(0,60));t=u.toString();}}}catch(x){}
+try{var r=new URL(document.referrer);if(/(^|\.)aiwiki\.kr$/.test(r.hostname)){var u=new URL(t);var sid=(r.pathname.replace(/^\/|\/$/g,"").replace(/\//g,"-")||"home").slice(0,60);
+if(u.searchParams.has("fpr")){u.searchParams.set("fp_sid",sid);t=u.toString();}
+else if(u.hostname==="try.elevenlabs.io"){u.searchParams.set("sid1",sid);t=u.toString();}}}catch(x){}
 location.replace(t);</script></head>
 <body><p>캡컷 공식 사이트로 이동합니다. 자동으로 넘어가지 않으면 <a href="https://www.capcut.com/ko-kr/" rel="sponsored noopener">여기</a>를 누르세요.</p></body></html>
