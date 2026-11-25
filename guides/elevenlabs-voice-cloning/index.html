@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>일레븐랩스 목소리 복제 — 내 목소리 AI 만들기, 인스턴트·프로페셔널 차이와 녹음 요령 | AI위키</title>
+<meta name="description" content="일레븐랩스(ElevenLabs) 목소리 복제(보이스 클로닝) 가이드. 인스턴트(IVC) 1~2분 녹음 vs 프로페셔널(PVC) 30분~3시간 학습 차이, Starter·Creator 플랜 조건, 본인 인증, 녹음 요령과 한국어 팁.">
+<link rel="canonical" href="https://aiwiki.kr/guides/elevenlabs-voice-cloning/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI위키">
+<meta property="og:title" content="일레븐랩스 목소리 복제 — 내 목소리 AI 만들기, 인스턴트·프로페셔널 차이와 녹음 요령">
+<meta property="og:description" content="일레븐랩스(ElevenLabs) 목소리 복제(보이스 클로닝) 가이드. 인스턴트(IVC) 1~2분 녹음 vs 프로페셔널(PVC) 30분~3시간 학습 차이, Starter·Creator 플랜 조건, 본인 인증, 녹음 요령과 한국어 팁.">
+<meta property="og:url" content="https://aiwiki.kr/guides/elevenlabs-voice-cloning/">
+<meta property="og:image" content="https://aiwiki.kr/og/guides/elevenlabs-voice-cloning.jpg">
+<meta property="og:locale" content="ko_KR">
+<meta property="article:published_time" content="2026-11-26T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-11-26T09:00:00+09:00">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/styles.css?v=20dc5542">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Article",
+   "@id": "https://aiwiki.kr/guides/elevenlabs-voice-cloning/#article",
+   "headline": "일레븐랩스 목소리 복제 — 내 목소리 AI 만들기, 인스턴트·프로페셔널 차이와 녹음 요령",
+   "description": "일레븐랩스(ElevenLabs) 목소리 복제(보이스 클로닝) 가이드. 인스턴트(IVC) 1~2분 녹음 vs 프로페셔널(PVC) 30분~3시간 학습 차이, Starter·Creator 플랜 조건, 본인 인증, 녹음 요령과 한국어 팁.",
+   "inLanguage": "ko-KR",
+   "datePublished": "2026-11-26T09:00:00+09:00",
+   "dateModified": "2026-11-26T09:00:00+09:00",
+   "author": {
+    "@type": "Person",
+    "name": "AI위키 에디터",
+    "url": "https://aiwiki.kr/about/"
+   },
+   "publisher": {
+    "@id": "https://aiwiki.kr/#org"
+   },
+   "image": "https://aiwiki.kr/og/guides/elevenlabs-voice-cloning.jpg",
+   "mainEntityOfPage": "https://aiwiki.kr/guides/elevenlabs-voice-cloning/",
+   "about": {
+    "@id": "https://aiwiki.kr/tools/elevenlabs/#product"
+   },
+   "keywords": "일레븐랩스 목소리 복제, 일레븐랩스 보이스클로닝, 일레븐랩스 내목소리, ElevenLabs voice cloning, 목소리 복제 ai, 보이스 클로닝"
+  },
+  {
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "홈",
+     "item": "https://aiwiki.kr/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "사용법",
+     "item": "https://aiwiki.kr/guides/"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "일레븐랩스 목소리 복제 — 내 목소리 AI 만들기, 인스턴트·프로페셔널 차이와 녹음 요령",
+     "item": "https://aiwiki.kr/guides/elevenlabs-voice-cloning/"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "일레븐랩스 목소리 복제는 무료로 되나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "안 됩니다. 인스턴트 복제는 Starter(월 $6, 지금 첫 달 $1)부터, 프로페셔널 복제는 Creator(월 $22)부터입니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "녹음은 몇 분 해야 하나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "인스턴트는 1~2분이면 충분하고 3분 넘게 넣어도 크게 좋아지지 않습니다. 프로페셔널은 최소 30분, 공식 권장은 1~3시간입니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "프로페셔널 복제는 얼마나 걸리나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "본인 인증 후 학습에 보통 3~6시간 걸리고, 대기열에 따라 더 걸릴 수 있습니다. 끝나면 이메일로 알려 줍니다."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "다른 사람 목소리도 복제할 수 있나요?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "프로페셔널 복제는 본인 목소리만 됩니다. 인스턴트 복제도 권리와 동의가 있어야 하며, 타인 사칭은 이용 정책 위반입니다."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+<!-- HEAD_EXTRAS:START -->
+<link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#0071e3">
+<meta name="naver-site-verification" content="59a08c50500627f492a4c0506413f94299c81926">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-01FPZZN65L"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-01FPZZN65L");</script>
+<script src="//wcs.pstatic.net/wcslog.js"></script><script>if(!wcs_add)var wcs_add={};wcs_add["wa"]="1d5740855915c00";if(window.wcs){wcs_do();}</script>
+<!-- HEAD_EXTRAS:END -->
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/">AI위키</a>
+    <nav aria-label="주요 메뉴">
+      <ul>
+        <li><a href="/tools/">도구</a></li>
+        <li><a href="/compare/">비교</a></li>
+        <li><a href="/guides/">사용법</a></li>
+        <li><a href="/category/voice/">음성</a></li>
+        <li><a href="/category/video/">영상</a></li>
+        <li><a href="/category/image/">이미지</a></li>
+        <li><a href="/news/">뉴스</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap wide">
+  <nav class="breadcrumb" aria-label="경로">
+    <ol><li><a href="/">홈</a></li><li><a href="/guides/">사용법</a></li><li><a href="/tools/elevenlabs/">일레븐랩스</a></li><li>일레븐랩스 목소리 복제 — 내 목소리 AI 만들기, 인스턴트·프로페셔널 차이와 녹음 요령</li></ol>
+  </nav>
+
+  <header class="article-head">
+    <p class="eyebrow">일레븐랩스 · 목소리 복제 · 보이스 클로닝</p>
+    <h1>일레븐랩스 목소리 복제 — 내 목소리 AI 만들기, 인스턴트·프로페셔널 차이와 녹음 요령</h1>
+    <p class="sub">1분 녹음으로 되는 인스턴트 복제와 30분~3시간 학습하는 프로페셔널 복제의 차이, 필요한 플랜, 잘 녹음하는 법.</p>
+    <div class="byline"><span>AI위키 에디터</span><span>2026.11.26 작성</span><span>읽는 시간 7분</span></div>
+  </header>
+
+  <div class="article-layout">
+  <article class="article-body">
+    <div class="quick"><strong>검색하신 답부터</strong><div class="qa"><p class="q">일레븐랩스로 내 목소리 복제하려면?</p><p class="a">1~2분 녹음으로 바로 만드는 인스턴트 복제(IVC)는 Starter(월 $6)부터, 30분 이상 녹음을 학습시켜 거의 구분이 안 되는 프로페셔널 복제(PVC)는 Creator(월 $22)부터입니다.</p><ol><li>인스턴트: 1~2분 깨끗한 녹음, 바로 사용</li><li>프로페셔널: 최소 30분, 권장 1~3시간, 본인 음성 인증 후 3~6시간 학습</li><li>프로페셔널은 본인 목소리만 가능(타인 동의가 있어도 불가)</li></ol></div><p class="perk">🎁 12월 1일까지 블랙프라이데이 · Creator 연간 첫해 $99</p><a class="btn btn-primary" href="/go/elevenlabs/" rel="sponsored noopener" target="_blank">일레븐랩스 요금제 보기</a><p class="fine">제휴 링크입니다. 가격은 같습니다.</p></div>
+    <div class="summary">
+      <strong>30초 요약</strong>
+      <ul><li>인스턴트 복제(IVC)는 1~2분 녹음으로 바로 만들어지고 Starter부터 됩니다. 3분 넘게 넣어도 크게 좋아지지 않습니다.</li><li>프로페셔널 복제(PVC)는 최소 30분, 권장 1~3시간 녹음을 학습시키는 방식이고 Creator부터 됩니다. 결과가 거의 구분되지 않습니다.</li><li>프로페셔널은 Voice Captcha(짧은 문장 읽기)로 본인임을 인증해야 하고, 학습에 보통 3~6시간 걸립니다.</li><li>복제 품질은 길이보다 녹음 상태가 좌우합니다. 잡음·울림 없이, 쓸 톤 그대로, 쓸 언어(한국어)로 녹음하세요.</li></ul>
+    </div>
+
+    <nav class="toc" aria-label="목차">
+      <strong>목차</strong>
+      <ol><li><a href="#compare">인스턴트 vs 프로페셔널</a></li><li><a href="#ivc">인스턴트 복제 만드는 법</a></li><li><a href="#pvc">프로페셔널 복제 만드는 법</a></li><li><a href="#record">잘 녹음하는 요령</a></li><li><a href="#korean">한국어로 쓸 때</a></li><li><a href="#rules">타인 목소리와 규칙</a></li><li><a href="#faq">자주 묻는 질문</a></li></ol>
+    </nav>
+
+<h2 id="compare">인스턴트 vs 프로페셔널</h2>
+<p>2026년 11월 25일 일레븐랩스 공식 문서와 요금 페이지 기준입니다.</p>
+<div class="table-wrap"><table><thead><tr><th>항목</th><th>인스턴트 복제 (IVC)</th><th>프로페셔널 복제 (PVC)</th></tr></thead><tbody>
+<tr><td><strong>필요 플랜</strong></td><td>Starter (월 $6)부터</td><td>Creator (월 $22)부터</td></tr>
+<tr><td><strong>녹음 길이</strong></td><td>1~2분 권장 (3분 넘으면 효과 적음)</td><td>최소 30분, 권장 1~3시간</td></tr>
+<tr><td><strong>만드는 시간</strong></td><td>바로</td><td>학습 보통 3~6시간 (대기열에 따라)</td></tr>
+<tr><td><strong>인증</strong></td><td>권리·동의 확인 체크</td><td>Voice Captcha로 본인 인증 (본인 목소리만)</td></tr>
+<tr><td><strong>품질</strong></td><td>톤은 비슷, 긴 글에서 흔들릴 수 있음</td><td>거의 구분 안 됨</td></tr>
+<tr><td><strong>보이스 라이브러리 공유·수익</strong></td><td>불가</td><td>가능</td></tr>
+<tr><td><strong>플랜별 개수</strong></td><td>목소리 슬롯 Starter 10 · Creator 30 · Pro 160</td><td>Creator·Pro 1개 · Scale 3개 · Business 10개</td></tr>
+</tbody></table></div>
+
+<h2 id="ivc">인스턴트 복제 만드는 법</h2>
+<ul>
+<li>왼쪽 <strong>Voices</strong>에서 + 버튼 → <strong>Instant Voice Clone</strong>을 고릅니다.</li>
+<li>녹음 파일을 올리거나 화면에서 바로 녹음합니다. 1~2분이면 충분합니다.</li>
+<li>이름을 붙이고, 이 목소리를 복제할 권리와 동의가 있음을 확인한 뒤 저장합니다.</li>
+<li><strong>My Voices</strong>에서 Use voice를 누르면 바로 TTS에 씁니다.</li>
+</ul>
+
+<h2 id="pvc">프로페셔널 복제 만드는 법</h2>
+<ul>
+<li>Voices 옆 + 버튼 → Professional Voice Clone의 <strong>Create new</strong>.</li>
+<li>녹음을 올리거나 화면에서 녹음합니다(내레이션·대화·광고용 예시 대본 제공). 화면에 길이 피드백이 나오는데, 공식 권장은 1시간 이상, 가능하면 3시간 가까이입니다.</li>
+<li>필요하면 클립별 Audio settings에서 잡음 제거, 화자 분리를 합니다.</li>
+<li>짧은 문장을 제한 시간 안에 읽어 <strong>본인 인증</strong>을 합니다. 샘플을 녹음한 장비·톤과 비슷하게 읽어야 통과가 잘 됩니다.</li>
+<li>학습이 끝나면 이메일로 알려 주고, Voices의 Personal 탭에서 씁니다.</li>
+</ul>
+<p>노래는 지원하지 않고 말하는 목소리만 학습됩니다.</p>
+
+<div class="cta-box"><h3>내 목소리 복제는 Starter부터</h3><p>인스턴트 복제는 Starter 첫 달 $1로 바로 써 볼 수 있습니다. 정밀 복제는 Creator, 지금은 블랙프라이데이 연간 첫해 $99입니다.</p><p class="perk">🎁 12월 1일까지 블랙프라이데이 · Creator 연간 첫해 $99</p><a class="btn btn-primary" href="/go/elevenlabs/" rel="sponsored noopener" target="_blank">일레븐랩스 요금제 보기</a><p class="fine">제휴 링크입니다. 구매 시 AI위키에 수수료가 지급되며 가격은 동일합니다.<br>AI위키는 툴을 소개하는 정보 사이트이며 판매자·운영사가 아닙니다. 결제·환불·구독은 각 툴의 공식 채널에서 진행됩니다.</p></div>
+
+<h2 id="record">잘 녹음하는 요령</h2>
+<p>공식 문서는 '길이보다 녹음 상태가 더 중요하다'고 강조합니다. AI는 들리는 것을 전부 따라 하기 때문에 잡음, 울림, 입소리까지 복제합니다.</p>
+<ul>
+<li><strong>잡음·울림 없는 곳</strong>: 이불이나 옷장 근처처럼 소리가 덜 울리는 공간이 좋습니다.</li>
+<li><strong>한 사람 목소리만</strong>: 배경음악, 다른 사람 목소리가 섞이면 안 됩니다.</li>
+<li><strong>톤을 일정하게</strong>: 쓸 톤 그대로 녹음하세요. 오디오북용이면 책 읽는 톤으로, 쇼츠용이면 쇼츠 톤으로.</li>
+<li><strong>음량</strong>: 평균 -23~-18dB RMS, 최대 -3dB 정도가 이상적입니다. 너무 작거나 찢어지지 않게.</li>
+<li><strong>파일</strong>: MP3라면 128kbps 이상. 비트레이트를 더 올려도 큰 차이는 없습니다.</li>
+<li><strong>최신 모델 주의</strong>: Eleven v4는 원본을 더 충실히 따라 해서 잡음·왜곡도 더 잘 옮깁니다. 깨끗한 녹음이 더 중요해졌습니다.</li>
+</ul>
+
+<h2 id="korean">한국어로 쓸 때</h2>
+<p>복제한 목소리는 쓸 언어로 녹음하는 게 가장 좋습니다. 한국어로 쓸 거면 한국어로 녹음하세요. 다른 언어로 녹음한 목소리로 한국어를 읽히면 원래 언어의 억양이 남을 수 있습니다. 공식 문서 기준 Eleven v4는 녹음과 같은 언어로 생성하면 원래 억양을 유지하고, 다른 언어로 생성하면 그 언어에 맞게 자연스럽게 읽습니다.</p>
+
+<h2 id="rules">타인 목소리와 규칙</h2>
+<ul>
+<li><strong>프로페셔널 복제는 본인 목소리만</strong> 됩니다. 상대 동의가 있어도 다른 사람 목소리로 만들 수 없습니다.</li>
+<li><strong>인스턴트 복제</strong>도 복제할 권리와 동의가 있어야 하고, 유명인·타인 사칭은 이용 정책 위반입니다.</li>
+<li>프로페셔널 복제를 보이스 라이브러리에 공유하면 다른 유료 사용자가 쓸 때마다 수익을 받을 수 있습니다. <a href="/guides/elevenlabs-voice-payouts/">일레븐랩스 수익·정산</a> 글에 정리했습니다.</li>
+</ul>
+
+<h2 id="sources">확인한 공식 문서</h2><p class="src-note">2026년 11월 25일에 일레븐랩스 공식 요금 페이지와 도움말·문서를 직접 확인해 작성했습니다. 아래 공식 문서 링크는 제휴 링크가 아닙니다.</p><ul class="sources"><li><a href="https://elevenlabs.io/docs/eleven-creative/voices/voice-cloning/instant-voice-cloning" rel="noopener" target="_blank">공식 문서: 인스턴트 보이스 클로닝 ↗</a></li><li><a href="https://elevenlabs.io/docs/eleven-creative/voices/voice-cloning/professional-voice-cloning" rel="noopener" target="_blank">공식 문서: 프로페셔널 보이스 클로닝 ↗</a></li><li><a href="https://elevenlabs.io/pricing" rel="noopener" target="_blank">일레븐랩스 공식 요금 페이지 (요금·FAQ) ↗</a></li><li><a href="https://elevenlabs.io/docs/overview/models" rel="noopener" target="_blank">공식 문서: 모델과 지원 언어 ↗</a></li></ul>
+
+    <h2 id="faq">자주 묻는 질문</h2>
+    <details><summary>일레븐랩스 목소리 복제는 무료로 되나요?</summary><p>안 됩니다. 인스턴트 복제는 Starter(월 $6, 지금 첫 달 $1)부터, 프로페셔널 복제는 Creator(월 $22)부터입니다.</p></details><details><summary>녹음은 몇 분 해야 하나요?</summary><p>인스턴트는 1~2분이면 충분하고 3분 넘게 넣어도 크게 좋아지지 않습니다. 프로페셔널은 최소 30분, 공식 권장은 1~3시간입니다.</p></details><details><summary>프로페셔널 복제는 얼마나 걸리나요?</summary><p>본인 인증 후 학습에 보통 3~6시간 걸리고, 대기열에 따라 더 걸릴 수 있습니다. 끝나면 이메일로 알려 줍니다.</p></details><details><summary>다른 사람 목소리도 복제할 수 있나요?</summary><p>프로페셔널 복제는 본인 목소리만 됩니다. 인스턴트 복제도 권리와 동의가 있어야 하며, 타인 사칭은 이용 정책 위반입니다.</p></details>
+
+    <section class="related">
+      <h2>이어서 읽기</h2>
+      <div class="grid"><a class="card" href="/guides/elevenlabs-voice-payouts/"><h3>일레븐랩스 수익·정산</h3><p>내 목소리로 돈 버는 법</p></a><a class="card" href="/guides/elevenlabs-how-to/"><h3>일레븐랩스 사용법</h3><p>가입부터 다운로드까지</p></a><a class="card" href="/guides/fish-audio-voice-cloning/"><h3>피쉬오디오 보이스클론</h3><p>20초 샘플로 복제하는 대안</p></a><a class="card" href="/guides/elevenlabs-pricing/"><h3>일레븐랩스 가격·요금제</h3><p>Starter와 Creator 차이</p></a></div>
+    </section>
+
+    <p class="disclosure">이 글은 2026년 11월 25일 일레븐랩스 공식 요금 페이지와 도움말 문서를 확인해 작성했습니다. 일부 링크는 제휴 링크이며 내용에 영향을 주지 않습니다. 가격·기능은 2026년 11월 기준이며 변경될 수 있습니다.</p>
+  </article>
+  <aside class="article-side" aria-label="사이드바">
+    <div class="side-sticky">
+      <div class="side-card">
+        <div class="side-top"><span class="logo" style="background:#000">11</span><div><strong><a href="/tools/elevenlabs/">일레븐랩스</a></strong><span class="cat">음성·TTS·더빙</span></div></div>
+        <dl class="side-facts"><div><dt>평점</dt><dd><b>4.6</b>/5</dd></div><div><dt>무료 플랜</dt><dd>있음</dd></div><div><dt>시작 요금</dt><dd>무료 · 유료 월 $5~</dd></div></dl>
+        <span class="side-stamp">2026.11.25 요금 확인</span>
+        <p class="perk">🎁 12월 1일까지 블랙프라이데이 · Creator 연간 첫해 $99</p>
+        <a class="btn btn-primary side-cta" href="/go/elevenlabs/" rel="sponsored noopener" target="_blank">일레븐랩스 요금제 보기</a>
+        <p class="side-fine">제휴 링크 · 가격은 동일합니다</p>
+      </div>
+      <nav class="side-toc" aria-label="목차"><strong>목차</strong><ol><li><a href="#compare">인스턴트 vs 프로페셔널</a></li><li><a href="#ivc">인스턴트 복제 만드는 법</a></li><li><a href="#pvc">프로페셔널 복제 만드는 법</a></li><li><a href="#record">잘 녹음하는 요령</a></li><li><a href="#korean">한국어로 쓸 때</a></li><li><a href="#rules">타인 목소리와 규칙</a></li><li><a href="#faq">자주 묻는 질문</a></li></ol></nav>
+    </div>
+  </aside>
+  <div class="mobile-cta"><div><strong>일레븐랩스</strong><span>무료 · 유료 월 $5~</span></div><a class="btn btn-primary" href="/go/elevenlabs/" rel="sponsored noopener" target="_blank">공식 사이트</a></div>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="legal">
+      <span>© 2026 AI위키. 일부 링크는 제휴 링크이며, 구매 시 수수료를 받을 수 있습니다.</span>
+      <span><a href="/about/">소개</a> · <a href="/privacy/">개인정보처리방침</a> · <a href="/disclosure/">제휴 고지</a> · <a href="/en/" hreflang="en" lang="en">English</a></span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){var links=[].slice.call(document.querySelectorAll('.side-toc a[href^="#"]'));if(!links.length||!('IntersectionObserver' in window))return;
+var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a;});
+var heads=[].slice.call(document.querySelectorAll('.article-body h2[id]')).filter(function(h){return map[h.id];});
+function set(id){links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+id);});}
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting)set(x.target.id);});},{rootMargin:'-64px 0px -70% 0px',threshold:0});
+heads.forEach(function(h){io.observe(h);});})();
+</script>
+
+</body>
+</html>
